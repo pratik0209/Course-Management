@@ -1,0 +1,23 @@
+body{
+background:#f4f6f9;
+font-family:Segoe UI;
+}
+
+.card{
+border:none;
+border-radius:20px;
+}
+
+table{
+background:white;
+border-radius:15px;
+overflow:hidden;
+}
+
+button{
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}

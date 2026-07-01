@@ -1,0 +1,63 @@
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4">
+        All Courses
+    </h2>
+
+    <table class="table table-bordered table-hover shadow">
+
+        <thead class="table-dark">
+
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Duration</th>
+                <th>Fee</th>
+                <th>Actions</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let course of courses">
+
+                <td>{{ course.id }}</td>
+
+                <td>{{ course.name }}</td>
+
+                <td>{{ course.duration }}</td>
+
+                <td>₹{{ course.fee }}</td>
+
+                <td>
+
+                    <button
+                        class="btn btn-warning btn-sm me-2"
+                        [routerLink]="['/edit-course', course.id]">
+                        Edit
+                    </button>
+
+                    <button
+                        class="btn btn-danger btn-sm"
+                        (click)="deleteCourse(course.id)">
+                        Delete
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <div
+        *ngIf="courses.length === 0"
+        class="alert alert-info text-center">
+
+        No Courses Found
+
+    </div>
+
+</div>
